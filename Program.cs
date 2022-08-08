@@ -9,7 +9,7 @@ builder.Services.AddCors(options => {
 options.AddPolicy(name: MyAllowSpecificOrigins,
   policy  =>
   {
-    policy.WithOrigins("https://cvnuxt.vercel.app/");
+    policy.WithOrigins("https://cvnuxt.vercel.app/", "https://dotrest.azurewebsites.net/");
   });
 });
 
@@ -39,16 +39,13 @@ builder.Services.AddSwaggerGen(options =>
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger(options => {
-      options.RouteTemplate = "/api/{documentName}/swagger.json";
-    });
-    app.UseSwaggerUI(options =>{
-      options.SwaggerEndpoint("/api/v1/swagger.json", "Dotrest v1");
-      options.RoutePrefix = string.Empty;
+app.UseSwagger(options => {
+  options.RouteTemplate = "/api/{documentName}/swagger.json";
 });
-}
+app.UseSwaggerUI(options =>{
+  options.SwaggerEndpoint("/api/v1/swagger.json", "Dotrest v1");
+  options.RoutePrefix = string.Empty;
+});
 
 app.UseHttpsRedirection();
 

@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/53d84899-74f0-4441-8846-8264a612a718/microsoft.web/sites/subscriptions/53d84899-74f0-4441-8846-8264a612a718/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/dotrest",
+  "appService.deploySubpath": "publish"
+}
