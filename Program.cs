@@ -11,7 +11,7 @@ builder.Services.AddCors(options => {
 options.AddPolicy(name: MyOrigins,
   policy  =>
   {
-    policy.WithOrigins("https://cvnuxt.vercel.app/", "https://dotrest.azurewebsites.net/");
+    policy.WithOrigins("https://cvnuxt.vercel.app/", "https://dotrest.azurewebsites.net/", "http://localhost:3000");
   });
 });
 

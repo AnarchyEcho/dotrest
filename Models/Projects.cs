@@ -14,6 +14,9 @@ public class Projects {
   [JsonPropertyName("homepage")]
   public Uri? Homepage { get; set; }
 
+  [JsonPropertyName("language")]
+  public string? Language { get; set; }
+
   Random rnd = new Random();
   public int Id { get {return rnd.Next(999999);} }
 }
