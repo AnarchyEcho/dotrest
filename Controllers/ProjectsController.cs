@@ -1,5 +1,6 @@
 using dotrest.Models;
 using dotrest.Services;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace dotrest.Controllers;
@@ -7,6 +8,7 @@ namespace dotrest.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 [Produces("application/json")]
+[EnableCors("_MyOrigins")]
 public class ProjectsController : ControllerBase {
   public ProjectsController() {
   }
