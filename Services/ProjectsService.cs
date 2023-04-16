@@ -18,7 +18,7 @@ public static class ProjectsService {
     client.DefaultRequestHeaders.Accept.Clear();
     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
     client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
-    var streamTask = client.GetStreamAsync($"https://api.github.com/users/KodeAndre/repos");
+    var streamTask = client.GetStreamAsync($"https://api.github.com/users/AnarchyEcho/repos");
     var repositories = await JsonSerializer.DeserializeAsync<List<Projects>>(await streamTask);
     #pragma warning disable 8603
     return repositories;
